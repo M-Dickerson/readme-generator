@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const markdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
 {   type: "input",
@@ -23,18 +24,21 @@ const questions = [
     name: "description",
 },
 {
-    type: "input",
+    type: "list",
     message: "What kind of license should your project have?",
+    choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3", "None"],
     name: "license",
 },
 {
-    type: "input",
+    type: "default",
     message: "What command should be run to install dependencies?",
+    default: ("npm i"),
     name: "dependencies",
 },
 {
-    type: "input",
+    type: "default",
     message: "What command should be run to run tests?",
+    default: ("npm test"),
     name: "tests",
 },
 {
@@ -48,12 +52,20 @@ const questions = [
     name: "contributing",
 },
 ];
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
+function writeToFile(fileName, data) {
+    fs.writeFile('log.txt', process.argv[3], (err) =>
+  err ? console.error(err) : console.log('Success!'));
+};
 // TODO: Create a function to initialize app
-function init() {}
-
+function init() {
+    inquirer
+    .prompt(questions)
+    .then((response) =>
+    response.confirm === response.password
+      ? console.log('Success!')
+      : console.log('You forgot your password already?!')
+  );
+};
 // Function call to initialize app
 init();
