@@ -32,4 +32,4 @@
   ## Questions
   Have questions? You can reach me at Dickerson.Morgan@outlook.com!
   
-  You can also view my GitHub profile here: https://M-Dickerson
+  You can also view my GitHub profile here: https://github.com/M-Dickerson

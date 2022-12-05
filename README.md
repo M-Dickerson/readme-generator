@@ -5,9 +5,6 @@
 The motivation and purpose behind this project was to create an index.js file that can generate a readme through a series of prompts. It solves the issue of not being able to easily generate a readme locally through our machines. I learned about node and how to properly install it, as well as creating a toggle menu through node.
 
 ## Table of Contents
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -15,7 +12,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-Node and Inquirer MUST be installed
+Node and Inquirer MUST be installed!
 
 ## Usage
 
