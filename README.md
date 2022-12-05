@@ -15,6 +15,7 @@ The motivation and purpose behind this project was to create an index.js file th
 Node and Inquirer MUST be installed!
 
 ## Usage
+[Link to demo video](https://drive.google.com/file/d/1tuISch59zyoddEUoQgGHJMjW-LPjIsjY/view)
 
 ![screenshot of prompts](./assets/prompt.png)
 

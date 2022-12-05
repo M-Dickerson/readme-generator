@@ -1,4 +1,4 @@
-# Readme Generator
+# Readme Generator Test
 
   ## Description
   This is a test
@@ -17,14 +17,14 @@
   npm i
 
   ## Usage
-  N/A
+  This is a test
 
   ## License
   This app uses the MIT license:
   (https://opensource.org/licenses/MIT)
   
   ## Contributing
-  N/A
+  This is a test
 
   ## Tests
   npm test
