@@ -1,9 +1,10 @@
 // TODO: Include packages needed for this application
-const fs = require('fs');
-const inquirer = require('inquirer');
-const markdown = require('./utils/generateMarkdown');
+const fs = require("fs");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
-const questions = [
+inquirer
+.prompt ([
 {   type: "input",
     message: "What is your GitHub username?",
     name: "username",
@@ -33,7 +34,7 @@ const questions = [
     type: "default",
     message: "What command should be run to install dependencies?",
     default: ("npm i"),
-    name: "dependencies",
+    name: "installation",
 },
 {
     type: "default",
@@ -44,28 +45,17 @@ const questions = [
 {
     type: "input",
     message: "What does the user need to know about using the repo?",
-    name: "using",
+    name: "usage",
 },
 {
     type: "input",
     message: "What does the user need to know about contributing to the repo?",
-    name: "contributing",
+    name: "contributor",
 },
-];
+])
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile("README.md", process.argv[3], (err) =>
+.then ((response) => {
+    let text = generateMarkdown(response);
+    fs.writeFile ("./utils/README.md", text, (err) =>
     err ? console.error(err) : console.log("Success!"));
-};
-// TODO: Create a function to initialize app
-function init() {
-    inquirer
-    .prompt(questions)
-    .then((response) =>
-    response.confirm === response.password
-      ? console.log("Success!")
-      : console.log("Try again")
-);
-};
-// Function call to initialize app
-init();
+});
